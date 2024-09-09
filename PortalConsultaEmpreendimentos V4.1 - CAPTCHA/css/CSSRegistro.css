@@ -1,0 +1,158 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+/*//////////////////HEADER//////////////////*/
+
+body{
+    font-family: sans-serif;
+    position: relative;
+}
+
+/*//////////////////CONTEÚDO//////////////////*/
+
+section{
+    height: 120vh;
+}
+
+.container{
+    padding: 32px;
+}
+
+fieldset{
+    border: 1px solid #ccc;
+    background: #f8f8f8;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+legend{
+    font-weight: bold;   
+}
+
+label{
+    cursor: pointer;
+}
+
+input#documento{
+    margin-right: 2px;
+}
+
+select{
+    cursor: pointer;
+    border: 1px solid #ccc;
+    background: #f8f8f8;
+}
+
+#avisoSenha {
+    font-size: 12px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 1rem;
+    border: 3px solid#2676EF;
+}
+
+.form-header {
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.login-button {
+    display: flex;
+    align-items: center;
+}
+
+.login-button button {
+    border: none;
+    background: linear-gradient(135deg, #2676EF, #40A9F4);
+    padding: 0.4rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-button button a {
+    text-decoration: none;
+    font-weight: 500;
+    color: #fff;
+}
+
+.form-header h1::after {
+    content: '';
+    display: block;
+    width: 5rem;
+    height: 0.3rem;
+    background-color: #2676EF;
+    margin: 0 auto;
+    position: absolute;
+    border-radius: 10px;
+}
+
+.input-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+
+.d-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem; /* Adiciona espaçamento entre os inputs */
+}
+
+.form-group.col-md-4 {
+    flex: 0 0 calc(32.9% - 0.5rem); /* Ajusta a largura das colunas para 50% menos metade do gap */
+    max-width: calc(32.9% - 0.5rem); /* Ajusta a largura máxima das colunas para 50% menos metade do gap */
+}
+
+.form-group.col-md-6 {
+    flex: 0 0 calc(50% - 0.5rem); /* Ajusta a largura das colunas para 50% menos metade do gap */
+    max-width: calc(50% - 0.5rem); /* Ajusta a largura máxima das colunas para 50% menos metade do gap */
+}
+
+.form-group.col-md-8 {
+    flex: 0 0 calc(65.5% - 0.5rem); /* Ajusta a largura das colunas para 50% menos metade do gap */
+    max-width: calc(65.5% - 0.5rem); /* Ajusta a largura máxima das colunas para 50% menos metade do gap */
+}
+
+.form-group.col-md-10 {
+    flex: 0 0 calc(82% - 0.5rem); /* Ajusta a largura das colunas para 50% menos metade do gap */
+    max-width: calc(82% - 0.5rem); /* Ajusta a largura máxima das colunas para 50% menos metade do gap */
+}
+
+.continue-button button {
+    width: 100%;
+    margin-top: 2.5rem;
+    border: none;
+    background: linear-gradient(135deg, #2676EF, #40A9F4);
+    padding: 0.62rem;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.continue-button button a {
+    text-decoration: none;
+    font-size: 0.93rem;
+    font-weight: 500;
+    color: #fff;
+}

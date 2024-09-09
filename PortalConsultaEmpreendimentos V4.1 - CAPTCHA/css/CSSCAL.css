@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+body{
+    font-family: sans-serif;
+    position: relative;
+}
+
+/*//////////////////CONTEÚDO//////////////////*/
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.consultar {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    border: none;
+    align-content: space-between;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.consultar-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.centralizar {
+    width: 50rem;
+    height: 100%;
+    background-color: #294c71;
+    padding: 40px;
+    border-radius: 16px;
+    color: white;
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.4);
+}
+
+.consultar label {
+    padding: 5px;
+    margin: 5px;
+    border: none;
+    border-radius: 3%;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+.consultar legend {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+/* Custom input style to ensure consistent size */
+.custom-input {
+    padding: 5px;
+    margin: 5px;
+    border: none;
+    border-radius: 3%;
+    box-sizing: border-box;
+    width: 200px; /* Ajuste conforme necessário */
+    height: 30px; /* Altura consistente com o Bootstrap */
+    font-size: 15px;
+    display: inline-block;
+}
+
+.consultar-btn {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.consultar-btn:hover {
+    background-color: #5e88bf;
+    color: white;
+}

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/CSSOEC.css">
+    <link rel="stylesheet" href="../css/header_footer.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../css/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/CSSPrincipal.css">
+    <title>Contato</title>
+</head>
+
+<body>
+
+    <header id="container">
+        <div id="header">
+            <div class="logo">
+                <img src="../imagens/Logo.png">
+            </div>
+
+            <ul id="nav-bar">
+                <li><a href="principal.html">Menu Principal</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li></li>
+            </ul>
+
+            <div class="dropdown">
+                <button id="userButton" onclick="toggleDropdown()" class="dropbtn">Usuário</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="#" onclick="logout()">Sair</a>
+                    <a href="#" id="accessibilityBtn" onclick="toggleAccessibilityMenu()">Acessibilidade</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Área de Acessibilidade -->
+        <div id="accessibilityMenu" style="display: none;">
+            <button id="closeAccessibilityMenu" onclick="toggleAccessibilityMenu()">X</button>
+            <div class="accessibility-options">
+                <p>Controle de Tamanho de Fonte:</p>
+                <button id="zoomOutBtn" title="Diminuir tamanho do texto"><strong>A-</strong></button>
+                <button id="resetZoomBtn" title="Tamanho normal do texto"><strong>A</strong></button>
+                <button id="zoomInBtn" title="Aumentar tamanho do texto"><strong>A+</strong></button>
+
+                <p>Controle de Contraste:</p>
+                <button id="normalContrastBtn" title="Contraste Normal">Normal</button>
+                <button id="highContrastBtn" title="Contraste Alto">Alto</button>
+                <button id="blackWhiteBtn" title="Preto e Branco">Preto e Branco</button>
+                <button id="invertContrastBtn" title="Inverter Cores">Inverter</button>
+            </div>
+        </div>
+    </header>
+
+    <section id="conteudo">
+        <div id="conteudosite">
+            <h2>Contato</h2>
+            <form id="myForm">
+                <label>Nome</label>
+                <input type="text" name="name" placeholder="Digite seu Nome" autocomplete="off" required>
+
+                <label>Email</label>
+                <input type="email" name="email" placeholder="Digite seu Email" autocomplete="off" required>
+
+                <label>Mensagem</label>
+                <textarea name="message" cols="30" rows="10" placeholder="Digite sua mensagem" required></textarea>
+
+                <button type="submit">Enviar</button>
+
+                <input type="hidden" name="accessKey" value="0089e3d9-98a8-42d7-bc81-c0ff6e78aa83">
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="secFooter">
+            <div class="textFooter">
+                <div class="textF">
+                    <a href="#" onclick="openModal('modalLGPD')">Lei Geral de Proteção de Dados</a>
+                </div>
+
+                <div class="textF">
+                    <a href="#" onclick="openModal('modalTermos')">Termos de Uso</a>
+                </div>
+
+                <div class="textF">
+                    <a href="#" onclick="openModal('modalPrivacidade')">Política de Privacidade</a>
+                </div>
+            </div>
+
+            <div class="TextFo">© 2023 Consulta Empreendimentos. Todos os direitos reservados</div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="modalLGPD" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modalLGPD')">&times;</span>
+            <iframe src="https://www.lgpd.ms.gov.br/wp-content/uploads/2021/11/Cartilha_LGPD-com-links.pdf" width="100%"
+                height="500px"></iframe>
+        </div>
+    </div>
+
+    <div id="modalTermos" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modalTermos')">&times;</span>
+            <iframe src="termo_uso.html" width="100%" height="500px"></iframe>
+        </div>
+    </div>
+
+    <div id="modalPrivacidade" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modalPrivacidade')">&times;</span>
+            <iframe src="privacidade.html" width="100%" height="500px"></iframe>
+        </div>
+    </div>
+
+    <script src="../scripts/dropdown.js"></script>
+    <script src="../scripts/logoutBtn.js"></script>
+    <script src="../scripts/acessibilidade.js"></script>
+    <script src="../scripts/modal.js"></script>
+
+    <script>
+        document.getElementById('myForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Impede o envio padrão
+
+            // Pega os dados do formulário
+            const formData = new FormData(this);
+
+            // Envia os dados via AJAX
+            fetch('https://api.staticforms.xyz/submit', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Sucesso:', data);
+                    // Redireciona para a página de obrigado após o envio bem-sucedido
+                    window.location.href = 'obrigado.html';
+                })
+                .catch((error) => {
+                    console.error('Erro:', error);
+                });
+        });
+    </script>
+</body>
+
+</html>

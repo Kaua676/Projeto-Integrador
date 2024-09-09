@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/CSSRegistro.css">
+    <link rel="stylesheet" href="../css/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/header_footer.css">
+    <link rel="stylesheet" href="../css/CSSPrincipal.css">
+    <title>Cadastre-se</title>
+</head>
+
+<body>
+    <header id="container">
+        <div id="header">
+            <div class="logo">
+                <img src="../imagens/Logo.png">
+            </div>
+
+            <ul id="nav-bar">
+                <li><a href="contato_login.html">Contato</a></li>
+                <li><a href="sobre_login.html">Sobre</a></li>
+                <li><a href="#" id="accessibilityBtn" onclick="toggleAccessibilityMenu()">Acessibilidade</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Área de Acessibilidade -->
+    <div id="accessibilityMenu" style="display: none;">
+        <button id="closeAccessibilityMenu" onclick="toggleAccessibilityMenu()">X</button>
+        <div class="accessibility-options">
+            <p>Controle de Tamanho de Fonte:</p>
+            <button id="zoomOutBtn" title="Diminuir tamanho do texto"><strong>A-</strong></button>
+            <button id="resetZoomBtn" title="Tamanho normal do texto"><strong>A</strong></button>
+            <button id="zoomInBtn" title="Aumentar tamanho do texto"><strong>A+</strong></button>
+
+            <p>Controle de Contraste:</p>
+            <button id="normalContrastBtn" title="Contraste Normal">Normal</button>
+            <button id="highContrastBtn" title="Contraste Alto">Alto</button>
+            <button id="blackWhiteBtn" title="Preto e Branco">Preto e Branco</button>
+            <button id="invertContrastBtn" title="Inverter Cores">Inverter</button>
+        </div>
+    </div>
+
+    <section>
+        <div class="container">
+            <div class="form">
+                <form action="../php/Registro.php" method="POST" onsubmit="validarLogin()">
+                    <div class="form-header">
+                        <div class="title">
+                            <h1>Cadastre-se</h1>
+                        </div>
+                        <div class="login-button">
+                            <button><a href="login.html">Entrar</a></button>
+                        </div>
+                    </div>
+
+                    <fieldset>
+                        <legend>Dados</legend>
+
+                        <div class="d-flex flex-wrap">
+                            <div class="form-group col-md-6">
+                                <label for="nome">Primeiro Nome</label>
+                                <input class="form-control" id="nome" type="text" name="nome"
+                                    placeholder="Digite seu nome" required>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="sobrenome">Sobrenome</label>
+                                <input class="form-control" id="sobrenome" type="text" name="sobrenome"
+                                    placeholder="Digite seu sobrenome" required>
+                            </div>
+                        </div>
+
+                        <div class="d-flex flex-wrap">
+                            <div class="form-group col-md-4">
+                                <label for="documento">CPF</label>
+                                <input class="form-control" id="documento" type="documento" name="documento"
+                                    maxlength="18" placeholder="Digite seu CPF" required>
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label for="nasc">Data de Nascimento</label>
+                                <input class="form-control" id="nasc" type="nasc" name="nasc" placeholder="__/__/____"
+                                    required>
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label for="number">Telefone/Celular</label>
+                                <input class="form-control" id="number" type="tel" name="number"
+                                    placeholder="(xx) xxxx-xxxx" required>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Endereço</legend>
+
+                        <div class="form-group">
+                            <label for="cep">CEP</label>
+                            <input class="form-control" id="cep" type="text" name="cep" placeholder="Digite seu cep"
+                                required>
+                        </div>
+
+                        <div class="d-flex flex-wrap">
+                            <div class="form-group col-md-8">
+                                <label for="rua">Rua</label>
+                                <input class="form-control" id="rua" type="text" name="rua" placeholder="Digite sua rua"
+                                    required>
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label for="numero">Número</label>
+                                <input class="form-control" id="numero" type="text" name="numero"
+                                    placeholder="Digite o numero de sua casa" required>
+                            </div>
+                        </div>
+
+                        <div class="d-flex flex-wrap">
+                            <div class="form-group col-md-6">
+                                <label for="complemento">Complemento</label>
+                                <input class="form-control" id="complemento" type="text" name="complemento"
+                                    placeholder="Digite o complemento">
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="bairro">Bairro</label>
+                                <input class="form-control" id="bairro" type="text" name="bairro"
+                                    placeholder="Digite o seu bairro" required>
+                            </div>
+                        </div>
+
+                        <div class="d-flex flex-wrap">
+                            <div class="form-group col-md-10">
+                                <label for="cidade">Cidade</label>
+                                <input class="form-control" id="cidade" type="text" name="cidade"
+                                    placeholder="Digite sua cidade" required>
+                            </div>
+
+                            <div class="form-group col-md-2">
+                                <label for="estado">Estado</label>
+                                <select class="form-control" name="estado">
+                                    <option value="ms">MS</option>
+                                </select>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Registro</legend>
+                        <div class="d-flex flex-wrap">
+                            <div class="form-group col-md-6">
+                                <label for="email">E-mail</label>
+                                <input class="form-control" id="email" type="email" name="email"
+                                    placeholder="Digite seu e-mail" required>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="confirmEmail">Confirme seu E-mail</label>
+                                <input class="form-control" id="confirmEmail" type="email" name="confirmEmail"
+                                    placeholder="Digite seu email novamente" required><br>
+                            </div>
+                        </div>
+
+                        <div class="d-flex flex-wrap">
+                            <div class="form-group col-md-6">
+                                <label for="password">Senha</label>
+                                <input class="form-control" id="password" type="password" name="password"
+                                    placeholder="Digite sua senha" required>
+                                <small id="avisoSenha">A senha deve conter pelo menos 8 dígitos, um Número, uma Letra
+                                    Maiúscula e um Caracter Especial</small>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="confirmPassword">Confirme sua Senha</label>
+                                <input class="form-control" id="confirmPassword" type="password" name="confirmPassword"
+                                    placeholder="Digite sua senha novamente" required><br>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <div class="continue-button">
+                        <button type="submit" name="submit" id="submit">Continuar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="secFooter">
+            <div class="textFooter">
+                <div class="textF">
+                    <a href="#" onclick="openModal('modalLGPD')">Lei Geral de Proteção de Dados</a>
+                </div>
+
+                <div class="textF">
+                    <a href="#" onclick="openModal('modalTermos')">Termos de Uso</a>
+                </div>
+
+                <div class="textF">
+                    <a href="#" onclick="openModal('modalPrivacidade')">Política de Privacidade</a>
+                </div>
+            </div>
+
+            <div class="TextFo">© 2023 Consulta Empreendimentos. Todos os direitos reservados</div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="modalLGPD" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modalLGPD')">&times;</span>
+            <iframe src="https://www.lgpd.ms.gov.br/wp-content/uploads/2021/11/Cartilha_LGPD-com-links.pdf" width="100%"
+                height="500px"></iframe>
+        </div>
+    </div>
+
+    <div id="modalTermos" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modalTermos')">&times;</span>
+            <iframe src="termo_uso.html" width="100%" height="500px"></iframe>
+        </div>
+    </div>
+
+    <div id="modalPrivacidade" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modalPrivacidade')">&times;</span>
+            <iframe src="privacidade.html" width="100%" height="500px"></iframe>
+        </div>
+    </div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+<script src="../scripts/acessibilidade.js"></script>
+<script src="../scripts/modal.js"></script>
+
+
+<script>
+    $(document).ready(function () {
+        function aplicarMascaraDocumento() {
+            var value = $('#documento').val().replace(/\D/g, ''); // Remove todos os caracteres não numéricos
+            if (value.length <= 11) { // Se tiver 11 dígitos ou menos, é um CPF
+                $('#documento').mask('000.000.000-00', { reverse: true });
+            } else { // Se tiver mais de 11 dígitos, é um CNPJ
+                $('#documento').mask('00.000.000/0000-00', { reverse: true });
+            }
+        }
+
+        $('#documento').on('input', function () {
+            var value = $(this).val().replace(/\D/g, ''); // Remove todos os caracteres não numéricos
+            if (value.length > 14) { // Limita a quantidade máxima de caracteres a 14
+                value = value.substring(0, 14);
+            }
+            $(this).val(value); // Atualiza o valor do campo apenas com os números
+        });
+
+        $('#documento').focus(function () {
+            $('#documento').unmask(); // Remove a máscara atual
+        });
+
+        $('#documento').blur(function () {
+            aplicarMascaraDocumento(); // Reaplica a máscara quando o campo perde foco
+        });
+
+        aplicarMascaraDocumento(); // Aplica a máscara inicialmente
+
+        $('#number').mask('(00) 00000-0000');
+        $('#cep').mask('00000-000');
+    });    
+</script>
+
+<script src="../scripts/validacaocpf_cnpj.js"></script>
+<script src="../scripts/validacaosenha.js"></script>
+
+<script>
+    function validarLogin() {
+        const documento = document.getElementById('documento').value;
+        const senha = document.getElementById('password').value;
+
+        if (!validarDocumento(documento)) {
+            alert('Por favor, insira um CPF ou CNPJ válido.');
+            event.preventDefault()
+            return false;
+        }
+
+        if (!validarSenha(senha)) {
+            alert('A senha deve ter pelo menos 8 caracteres e conter pelo menos um número, uma letra maiúscula, uma letra minúscula e um caractere especial.');
+            event.preventDefault()
+            return false;
+        }
+
+        return true; // Se todos os campos estiverem válidos, permite o envio do formulário
+    }
+</script>
+
+<script>
+    let zoomLevel = 1;
+
+    document.getElementById('zoomInBtn').addEventListener('click', function () {
+        zoomLevel += 0.1;
+        document.body.style.zoom = zoomLevel;
+    });
+
+    document.getElementById('zoomOutBtn').addEventListener('click', function () {
+        if (zoomLevel > 0.1) {
+            zoomLevel -= 0.1;
+            document.body.style.zoom = zoomLevel;
+        }
+    });
+</script>
+
+</html>

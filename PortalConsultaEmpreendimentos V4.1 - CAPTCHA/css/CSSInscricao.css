@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+body{
+    font-family: sans-serif;
+    position: relative;
+}
+
+/*//////////////////TABELA//////////////////*/
+#inscricoes {
+    color: rgb(13, 14, 14);
+    font-size: 25px;
+    font-weight: bolder;
+    margin-left: 50px;
+}
+
+#inscricoes p {
+    font-size: 20px;
+}
+
+#tabela {
+    border-collapse: collapse;
+    width: 95%;
+    margin: auto 30px auto 50px;
+}
+
+#tabela th, #tabela td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
+
+#tabela th {
+    background-color: #b1c9ef;
+}
+
+#opcao {
+    margin: auto 10px 10px 10px;
+}
+
+#dados {
+    margin: auto 10px 10px 0px;
+    /*height: 38px;*/
+    font-size: 16px;   
+    padding: 0 10px;
+    width: 350px; /* Aqui você pode ajustar a largura conforme necessário */
+}
+
+#busca button {
+    /*height: 38px;*/
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #007bff; /* Cor da borda */
+    background-color: #007bff; /* Cor de fundo */
+    color: #fff; /* Cor do texto */
+    padding: 0 10px;
+    cursor: pointer;
+  }
+  
+  #busca button:hover {
+    background-color: #0056b3; /* Cor de fundo ao passar o mouse */
+  }

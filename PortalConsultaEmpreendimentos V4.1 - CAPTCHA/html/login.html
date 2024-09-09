@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/CSSLogin.css" />
+    <link rel="stylesheet" href="../css/CSSPrincipal.css" />
+    <link rel="stylesheet" href="../css/header_footer.css">
+    <title>Login</title>
+</head>
+
+<body id="teste">
+    <header id="container">
+        <div id="header">
+            <div class="logo">
+                <img src="../imagens/Logo.png">
+            </div>
+
+            <ul id="nav-bar">
+                <li><a href="contato_login.html">Contato</a></li>
+                <li><a href="sobre_login.html">Sobre</a></li>
+            </ul>
+        </div>
+
+        <!-- Área de Acessibilidade -->
+        <div id="accessibilityMenu" style="display: none;">
+            <button id="closeAccessibilityMenu" onclick="toggleAccessibilityMenu()">X</button>
+            <div class="accessibility-options">
+                <p>Controle de Tamanho de Fonte:</p>
+                <button id="zoomOutBtn" title="Diminuir tamanho do texto"><strong>A-</strong></button>
+                <button id="resetZoomBtn" title="Tamanho normal do texto"><strong>A</strong></button>
+                <button id="zoomInBtn" title="Aumentar tamanho do texto"><strong>A+</strong></button>
+
+                <p>Controle de Contraste:</p>
+                <button id="normalContrastBtn" title="Contraste Normal">Normal</button>
+                <button id="highContrastBtn" title="Contraste Alto">Alto</button>
+                <button id="blackWhiteBtn" title="Preto e Branco">Preto e Branco</button>
+                <button id="invertContrastBtn" title="Inverter Cores">Inverter</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="login">
+        <form action="../php/testLogin.php" class="container" method="POST" onsubmit="return validarLogin()">
+            <h1 class="headline">Bem-vindo(a)</h1>
+            <h2 class="subheadline">Insira seus dados de acesso</h2>
+
+            <div class="form">
+
+                <label class="label-documento" for="documento">CPF</label>
+                <div id="icons">
+                    <i class="bx bxs-user"></i>
+                    <input name="documento" class="input-documento" type="documento" id="documento" maxlength="18"
+                        placeholder="CPF" autocomplete="off">
+                </div>
+
+                <label class="label-password" for="password">Senha</label>
+                <div id="icons">
+                    <i class="bx bxs-key"></i>
+                    <input class="input-password" type="password" id="password" name="password" placeholder="Sua senha">
+                    <i class="bi bi-eye-fill" id="olho" onclick="mostrarSenha()"></i>
+                </div>
+                <a class="forgot" href="esqueceu_senha.html"> Esqueceu a senha?</a>
+
+                <div class="captcha-container">
+                    <p id="captchaCode"></p>
+                    <i class="bi bi-arrow-clockwise" onclick="generateCaptcha()"></i>
+                    <input type="text" name="captchaInput" id="captchaInput" placeholder="Enter CAPTCHA">
+                    <input type="hidden" name="captcha_code" id="captchaCodeHidden" value="">
+                    <p id="captchaMessage"></p>
+                </div>
+
+                <button id="submit" name="submit" class="submit" type="submit" value="enviar"
+                    onclick="validarLogin()">Entrar</button>
+
+                <p>Ainda não possui uma conta?<a href="registro.html">Criar conta</a></p>
+            </div>
+        </form>
+        <!--<div id="countdown"></div>-->
+        <div id="countdownModal" class="modal">
+            <div class="modal-content">
+                <p id="modalCountdown"></p>
+            </div>
+        </div>
+
+        <script src="../scripts/tentativalogin.js"></script>
+    </main>
+
+    <footer>
+        <div class="secFooter">
+            <div class="textFooter">
+                <div class="textF">
+                    <a href="#" onclick="openModal('modalLGPD')">Lei Geral de Proteção de Dados</a>
+                </div>
+    
+                <div class="textF">
+                    <a href="#" onclick="openModal('modalTermos')">Termos de Uso</a>
+                </div>
+    
+                <div class="textF">
+                    <a href="#" onclick="openModal('modalPrivacidade')">Política de Privacidade</a>
+                </div>
+            </div>
+    
+            <div class="TextFo">© 2023 Consulta Empreendimentos. Todos os direitos reservados</div>
+        </div>
+    </footer>
+    
+    <!-- Modals -->
+    <div id="modalLGPD" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modalLGPD')">&times;</span>
+            <iframe src="https://www.lgpd.ms.gov.br/wp-content/uploads/2021/11/Cartilha_LGPD-com-links.pdf" width="100%" height="500px"></iframe>
+        </div>
+    </div>
+    
+    <div id="modalTermos" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modalTermos')">&times;</span>
+            <iframe src="termo_uso.html" width="100%" height="500px"></iframe>
+        </div>
+    </div>
+    
+    <div id="modalPrivacidade" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modalPrivacidade')">&times;</span>
+            <iframe src="privacidade.html" width="100%" height="500px"></iframe>
+        </div>
+    </div>
+</body>
+
+<script src="../scripts/visusenha.js"></script>
+<script src="../scripts/validarlogin.js"></script>
+<script src="../scripts/validacaocpf.js"></script>
+<script src="../scripts/validacaosenha.js"></script>
+<script src="../scripts/captcha.js"></script>
+<script src="../scripts/logoutBtn.js"></script>
+<script src="../scripts/acessibilidade.js"></script>
+<script src="../scripts/modal.js"></script>
+
+
+
+<script>
+    let zoomLevel = 1;
+
+    document.getElementById('zoomInBtn').addEventListener('click', function () {
+        zoomLevel += 0.1;
+        document.body.style.zoom = zoomLevel;
+    });
+
+    document.getElementById('zoomOutBtn').addEventListener('click', function () {
+        if (zoomLevel > 0.1) {
+            zoomLevel -= 0.1;
+            document.body.style.zoom = zoomLevel;
+        }
+    });
+</script>
+
+</html>

@@ -1,0 +1,200 @@
+
+/*//////////////////HEADER//////////////////*/
+
+#container {
+    background: url(../imagens/fundo.png);
+    height: 150px;
+    background-position: bottom;
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.logo img {
+    height: 100px;
+    margin: auto;
+    display: flex;
+}
+
+/*//////////////////BARRA DE NAVEGAÇÃO//////////////////*/
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#nav-bar {
+    display: flex;
+    padding: 0;
+}
+
+#header ul {
+    background: #b1c9ef;
+    border-radius: 40px;
+}
+
+#header ul li {
+    display: flex;
+}
+
+#header ul li:hover {
+    background: #638ecb;
+    border-radius: 40px;
+    border: #638ecb;
+}
+
+#header ul a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.nav-acessibilidade-text {
+    color: #fff;
+}
+
+/* Estilize o botão do dropdown */
+.dropbtn {
+    background-color: #b1c9ef;
+    color: white;
+    border-radius: 40px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover {
+    background-color: #638ecb;
+}
+
+/* Estilize o conteúdo do dropdown */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Estilize os links no dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Adicione uma cor de fundo ao dropdown quando passar o mouse */
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Mostrar o dropdown quando o botão é clicado */
+.show {
+    display: block;
+}
+
+/* Estilos do botão "X" para fechar o menu */
+#closeAccessibilityMenu {
+    background-color: #f00;
+    color: #fff;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    float: right;
+}
+
+/* Estilos do menu de acessibilidade */
+#accessibilityMenu {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    width: 250px;
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    z-index: 9999;
+}
+
+.accessibility-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.accessibility-options p {
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Estilos de contraste */
+.high-contrast {
+    background-color: #000;
+    color: #fff;
+}
+
+.black-white {
+    filter: grayscale(100%);
+}
+
+.inverted-contrast {
+    filter: invert(100%);
+}
+
+
+/*//////////////////RODAPÉ//////////////////*/
+
+footer {
+    position: fixed;
+    bottom: 0;   
+    width: 100%;
+    background-color: #294C71;
+    z-index: 9999;
+}
+
+.secFooter {
+    font-size: 12px;
+    padding-top: 24px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.textFooter {
+    display: flex;
+    padding-bottom: 9px;
+    justify-content: space-evenly;
+}
+
+.textFooter .textF a {
+    display: inline-block;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #fff;
+    text-decoration: none;
+}
+
+.textFooter .textF a:hover {
+    color: #638ecb;
+}
+
+.TextFo {
+    display: flex;
+    padding-bottom: 9px;
+    justify-content: center;
+}
+
+

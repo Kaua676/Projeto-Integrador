@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/contador.css">
+    <link rel="stylesheet" href="../css/header_footer.css">
+    <link rel="stylesheet" href="../css/CSSPrincipal.css">
+    <title>Contador</title>
+    <link rel="stylesheet" href="../css/bootstrap/css/bootstrap.min.css">
+</head>
+
+<body>
+    <header id="container">
+        <div id="header">
+            <div class="logo">
+                <img src="../imagens/Logo.png">
+            </div>
+
+            <ul id="nav-bar">
+                <li><a href="principal.html">Menu Principal</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li></li>
+            </ul>
+
+            <div class="dropdown">
+                <button id="userButton" onclick="toggleDropdown()" class="dropbtn">Usuário</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="#" onclick="logout()">Sair</a>
+                    <a href="#" id="accessibilityBtn" onclick="toggleAccessibilityMenu()">Acessibilidade</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Área de Acessibilidade -->
+        <div id="accessibilityMenu" style="display: none;">
+            <button id="closeAccessibilityMenu" onclick="toggleAccessibilityMenu()">X</button>
+            <div class="accessibility-options">
+                <p>Controle de Tamanho de Fonte:</p>
+                <button id="zoomOutBtn" title="Diminuir tamanho do texto"><strong>A-</strong></button>
+                <button id="resetZoomBtn" title="Tamanho normal do texto"><strong>A</strong></button>
+                <button id="zoomInBtn" title="Aumentar tamanho do texto"><strong>A+</strong></button>
+
+                <p>Controle de Contraste:</p>
+                <button id="normalContrastBtn" title="Contraste Normal">Normal</button>
+                <button id="highContrastBtn" title="Contraste Alto">Alto</button>
+                <button id="blackWhiteBtn" title="Preto e Branco">Preto e Branco</button>
+                <button id="invertContrastBtn" title="Inverter Cores">Inverter</button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section>
+            <form action="#" class="centralizar" id="consultaForm">
+                <fieldset class="consultar">
+                    <legend>Associar/Desassociar Contador</legend>
+                    <label for="cadastro">Cadastro</label>
+                    <div id="opcao" class="consultar-div">
+                        <select name="opcao" type="text" class="cadastro custom-input" autofocus>
+                            <!--<option selected></option>-->
+                            <option selected value="im">Inscrição Municipal</option>
+                            <option value="cnpj">CPF ou CNPJ</option>
+                        </select>
+                        <input class="custom-input" name="dados" type="text">
+                    </div>
+                    <label for="tipoCertidao">Tipo de Serviço</label>
+                    <div>
+                        <select name="tipoCertidao" class="custom-input">
+                            <!--<option selected></option>-->
+                            <option selected value="associar" name="associar">Associar Contador</option>
+                            <option value="desassociar" name="desassociar">Desassociar Contador</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3 file-input-container">
+                        <label for="formFileMultiple" id="fileLabel" class="form-label inserirArquivo">
+                            <img src="../imagens/inserirArquivo.png" alt="" style="height:30px;">Inserir Arquivo
+                        </label><br>
+                        <input class="form-control" type="file" id="formFileMultiple" multiple
+                            onchange="updateFileLabel()">
+                        <button type="button" onclick="adicionarArquivos()" class="consultar-btn"
+                            id="adicionar">Adicionar</button>
+                    </div>
+
+                    <table id="tabelaArquivos">
+                        <thead>
+                            <tr>
+                                <th>Nome do Arquivo</th>
+                                <th>Tamanho do Arquivo (bytes)</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                    <button type="submit" class="consultar-btn">SOLICITAR</button>
+                    <div id="resultado"></div>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div class="secFooter">
+            <div class="textFooter">
+                <div class="textF">
+                    <a href="#" onclick="openModal('modalLGPD')">Lei Geral de Proteção de Dados</a>
+                </div>
+
+                <div class="textF">
+                    <a href="#" onclick="openModal('modalTermos')">Termos de Uso</a>
+                </div>
+
+                <div class="textF">
+                    <a href="#" onclick="openModal('modalPrivacidade')">Política de Privacidade</a>
+                </div>
+            </div>
+
+            <div class="TextFo">© 2023 Consulta Empreendimentos. Todos os direitos reservados</div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="modalLGPD" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modalLGPD')">&times;</span>
+            <iframe src="https://www.lgpd.ms.gov.br/wp-content/uploads/2021/11/Cartilha_LGPD-com-links.pdf" width="100%"
+                height="500px"></iframe>
+        </div>
+    </div>
+
+    <div id="modalTermos" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modalTermos')">&times;</span>
+            <iframe src="termo_uso.html" width="100%" height="500px"></iframe>
+        </div>
+    </div>
+
+    <div id="modalPrivacidade" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modalPrivacidade')">&times;</span>
+            <iframe src="privacidade.html" width="100%" height="500px"></iframe>
+        </div>
+    </div>
+    <script src="../scripts/dropdown.js"></script>
+    <script src="../scripts/logoutBtn.js"></script>
+    <script src="../scripts/acessibilidade.js"></script>
+    <script src="../scripts/modal.js"></script>
+    <script>
+        let arquivos = []; // Array para armazenar os arquivos
+
+        function updateFileLabel() {
+            const fileInput = document.getElementById('formFileMultiple');
+            const fileLabel = document.getElementById('fileLabel');
+
+            if (fileInput.files.length > 0) {
+                fileLabel.textContent = fileInput.files[0].name;
+            } else {
+                fileLabel.textContent = 'Inserir Arquivo';
+            }
+        }
+
+        function adicionarArquivos() {
+            const fileInput = document.getElementById('formFileMultiple');
+            const fileList = fileInput.files;
+            const tabela = document.getElementById('tabelaArquivos').getElementsByTagName('tbody')[0];
+
+            for (let i = 0; i < fileList.length; i++) {
+                arquivos.push(fileList[i]); // Adiciona o arquivo ao array
+
+                const newRow = tabela.insertRow();
+                const cellNome = newRow.insertCell(0);
+                const cellTamanho = newRow.insertCell(1);
+                const cellAcoes = newRow.insertCell(2);
+
+                cellNome.textContent = fileList[i].name;
+                cellTamanho.textContent = fileList[i].size;
+
+                const btnExcluir = document.createElement('button');
+                btnExcluir.textContent = 'Excluir';
+                btnExcluir.onclick = function () {
+                    excluirArquivo(i, newRow);
+                };
+
+                const btnDownload = document.createElement('button');
+                btnDownload.textContent = 'Download';
+                btnDownload.onclick = function () {
+                    downloadArquivo(fileList[i]);
+                };
+
+                cellAcoes.appendChild(btnExcluir);
+                cellAcoes.appendChild(btnDownload);
+            }
+
+            // Limpa o input de arquivos após adicionar à tabela
+            fileInput.value = '';
+        }
+
+        function excluirArquivo(index, row) {
+            arquivos.splice(index, 1); // Remove o arquivo do array
+            row.remove(); // Remove a linha da tabela
+        }
+
+        function downloadArquivo(file) {
+            const url = URL.createObjectURL(file);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = file.name;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+    </script>
+
+    <script>
+        let zoomLevel = 1;
+
+        document.getElementById('zoomInBtn').addEventListener('click', function () {
+            zoomLevel += 0.1;
+            document.body.style.zoom = zoomLevel;
+        });
+
+        document.getElementById('zoomOutBtn').addEventListener('click', function () {
+            if (zoomLevel > 0.1) {
+                zoomLevel -= 0.1;
+                document.body.style.zoom = zoomLevel;
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+body{
+    font-family: sans-serif;
+    position: relative;
+}
+
+/*//////////////////CONTEÚDO//////////////////*/
+
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+}
+
+#conteudo{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.content{
+    width: 50rem;
+    background-color: #294c71;
+    padding: 40px;
+    border-radius: 16px;
+    color: white;
+}

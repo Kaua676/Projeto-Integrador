@@ -1,0 +1,223 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 50px;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px 0 #00000020;
+}
+
+.headline {
+  font-size: 30px;
+  font-weight: 600;
+  color: #333333;
+}
+
+.subheadline {
+  font-size: 14px;
+  font-weight: 400;
+  color: #666;
+}
+
+.form {
+  width: 256px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 16px;
+}
+
+.input-documento {
+  margin-bottom: 8px;
+  width: 100%;
+  padding: 8px 0 8px 32px;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+}
+
+.input-password {
+  width: 100%;
+  padding: 8px 0 8px 32px;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+}
+
+.label-documento {
+  margin: 0 0 -12px 0;
+  color: #333333;
+  font-weight: 600;
+}
+
+.label-password {
+  margin: 0 0 -12px 0;
+  color: #333333;
+  font-weight: 600;
+}
+
+.form i {
+  color: #999999;
+  font-size: 16px;
+  transform: translateX(10px) translateY(28px); 
+}
+
+.input-documento::placeholder {
+  font-size: 12px;
+  color: #999999;
+}
+
+.nav-acessibilidade-text{
+  color: #fff;
+}
+
+.input-password::placeholder {
+  font-size: 12px;
+  color: #999999;
+}
+
+.input-documento:focus {
+  border: 1px solid #2676EF;
+}
+
+.input-password:focus {
+  border: 1px solid #2676EF;
+}
+
+.forgot {
+  color: #2676EF;
+  margin: 16px 0 16px 0;
+  cursor: pointer;
+}
+
+.forgot:hover {
+  color: #1757B9;
+}
+
+.captcha-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+#captchaCode {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  background-color: #e2e2e2;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+input {
+  padding: 10px;
+  width: 80%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+input:focus {
+  border: 1px solid #2676EF;
+}
+
+.captcha-container i{
+  cursor: pointer;
+}
+
+#captchaMessage {
+  font-weight: bold;
+}
+
+.submit {
+  width: 100%;
+  border-radius: 4px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #2676EF, #40A9F4);
+  color: #ffffff;
+  padding: 8px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.form p{
+  color: black;
+  padding-top: 20px; 
+}
+
+.form a{
+  color: #1757B9;
+  text-decoration: none;
+  margin-left: 3px;
+}
+
+#icons{
+  position: relative;
+  width: 100%;
+  padding-top: 20px;
+}
+
+#icons i{
+  position: absolute;
+  transform: translate(10px, 10px);
+}
+
+#olho{
+  right: 15px;
+  cursor: pointer;
+}
+
+/* Estilos para centralizar e estilizar o modal */
+.modal {
+  display: none; /* Esconde o modal por padrão */
+  position: fixed;
+  z-index: 1000; /* Exibe acima de outros conteúdos */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  width: 300px;
+}
+
+.modal p {
+  font-size: 18px;
+}
+
+/* Telas medias (landscape tablets, 768px pra cima)
+@media screen and (min-width: 768px) {
+  .login {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+} */

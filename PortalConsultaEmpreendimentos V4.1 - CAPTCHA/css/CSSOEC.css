@@ -1,0 +1,217 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+body{
+    font-family: sans-serif;
+}
+
+/*//////////////////CONTEÚDO//////////////////*/
+
+#conteudo{
+    width: 100%;
+    display: flex;
+    justify-content: center ;
+    padding-top: 40px;
+    height: 100vh;
+}
+
+#conteudosite{
+    display: flex;
+    font-family: sans-serif;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 80%;
+    padding: 10px 45px;
+    width: 700px;
+    background: #294C71;
+    border-radius: 16px;
+    color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+#conteudo h2{
+    color: #f5f5f5;
+    font-size: 40px;
+    margin: 10px;
+}
+
+#conteudo form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+form label{
+    color: f5f5f5;
+    font-size: 17px;
+    margin-bottom: 4px;
+}
+
+form input{
+    padding: 15px;
+    outline: none;
+    border: 0;
+    margin-bottom: 20px;
+    font-size: 15px;
+    transition: all 0.5s;
+}
+
+form input:focus{
+    border-radius: 16px;
+}
+
+form textarea{
+    padding: 10px;
+    outline: none;
+    border: 0;
+    font-size: 15px;
+    margin-bottom: 30px;
+    transition: all 0.5s;
+}
+
+form textarea:focus{
+    border-radius: 16px;
+}
+
+form button{
+    padding: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    background: transparent;
+    border: 2px solid #f5f5f5;
+    color: #f5f5f5;
+    transition: all 0.5s;
+    margin-bottom: 20px;
+}
+
+form button:hover{
+    background-color: #f5f5f5;
+    color: #101026;
+    border-radius: 16px;
+}
+
+/*&&&&&&&&&&&&&&&&&&&TELA DE CONTATO&&&&&&&&&&&&&&&&&&&*/
+
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #294C71;
+    flex-direction: column;
+ }
+ .text{
+     font-size: 45px;
+     color: #f5f5f5;
+     margin-bottom: 30px;
+ }
+ .paragrafo{
+     color: #f5f5f5;
+     margin-bottom: 50px;
+ }
+ .btn{
+     padding: 15px 55px;
+     background: #f5f5f5;
+     text-decoration: none;
+     color: #101026;
+     font-size: 18px;
+     transition: all 0.5s;
+ }
+ .btn:hover{
+     border-radius: 16px;
+ }
+
+/*&&&&&&&&&&&&&&&&&&&TELA DE REDEFINIÇÃO DE SENHA&&&&&&&&&&&&&&&&&&&*/
+
+#sec-esqueceusenha{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #294C71;
+    flex-direction: column;
+}
+
+#containersenha{
+    display: flex;
+    width: 100%;
+    font-family: sans-serif;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+}
+
+#containersenha h3{
+    padding: 20px;
+}
+
+#form-senha form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#form-senha form label{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#containersenha #form-senha input{
+    width: 700px;
+}
+
+#form-senha button{
+    display: flex;
+    justify-content: center;
+    width: 200px;
+}
+
+#form-senha a{
+    color: #fff;
+}
+
+
+
+/*//////////////////BREACKPOINTS//////////////////*/
+
+/* Small devices (portrait tablets and large phones, 600px pra cima) */
+@media only screen and (min-width: 600px) {
+    
+    
+}
+
+/* Telas medias (landscape tablets, 768px pra cima) */
+@media only screen and (min-width: 768px) {
+    
+
+}
+
+/* Grandes telas (laptops/desktops, 992px pra cima) */
+@media only screen and (min-width: 992px) {
+    
+
+}
+
+/* Grandes Telas (Grandes laptops and desktops, 1200px pra cima) */
+@media only screen and (min-width: 1600px) {
+    footer{
+        /* position: fixed; */
+        bottom: 0;
+        width: 100%;
+    }
+
+    body{
+        font-family: sans-serif;
+        position: relative;
+    }
+
+}

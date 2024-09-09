@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 3cm 2cm 2cm 3cm;
+    line-height: 1.5;
+}
+h1, h2 {
+    font-weight: bold;
+    text-align: center;
+}
+p {
+    text-indent: 1.25cm;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+table, th, td {
+    border: 1px solid black;
+}
+th, td {
+    padding: 10px;
+    text-align: left;
+}
